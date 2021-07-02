@@ -1,13 +1,10 @@
 """ 
 Created by: Guilherme J. Ramires
-Github: https://github.com/GuiJR777
+Github: https:./github.com/GuiJR777
 """
-from core.cache.redis import Cache
-from core.utils import agora
 from random import randint
 import re
 
-cache = Cache()
 
 class  Dice():
     def __init__(self, number_of_sides:int = 6):
@@ -40,13 +37,11 @@ class  Dice():
         if amounts > 1:
             print(f'[Total  - {self.name}] -> {total_result} ')
         response = {
-            'created_at' : agora(),
             'dice' : self.name,
             'one_line_result' : self.get_result_in_line(plays, total_result),
             'plays' : plays,
             'total' : total_result
         }
-        cache.include_with_hash(response)
 
         return response
 
