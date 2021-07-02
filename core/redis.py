@@ -30,7 +30,7 @@ class Cache():
         }
         value = json.dumps(value)
         key = u.hash_this(value)
-        self.cache.set(key, value)
+        self.include(key, value)
     
     def return_db(self,key:str) -> str:
         # Retorna do Cache
@@ -45,7 +45,7 @@ class Cache():
         i = 0
         for key in self.cache.keys():
             i+=1
-            response[f'{i}'] = self.return_db(key)
+            response[f'{i}'] = json.loads(self.return_db(key))
 
         return response
         
