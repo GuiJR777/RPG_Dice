@@ -44,6 +44,8 @@ Por favor, use os EndPoints:
 - **/dice/text/{ _your text hear_ }** método GET para usar a partir do comando "roll {n} d {n}".
 - **/dice/text/** método POST para enviar um comando "roll {n} d {n}" em um objeto JSON na chave "text".
 - **/dice/{ _número de lados do dado desejado_ }/{ _quantidade de dados desejados_ }** para usar um dado específico.
+- **/dice/history** exibe o histórico de rolagens.
+- **/dice/history/clear** apaga o histórico de rolagens.
 
 Essa classe será utilizada futuramente em projetos que envolvem RPG, fique a vontade para utiliza-lá em seus projetos também.
 
