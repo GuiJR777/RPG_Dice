@@ -51,7 +51,7 @@ class RollDice(Resource):
 
 class History(Resource):
     def get(self):
-        payload = json.dumps(cache.return_all())
+        payload = cache.return_all()
 
         return json.dumps(payload)
 
