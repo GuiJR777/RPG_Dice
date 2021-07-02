@@ -35,4 +35,5 @@ dado = Dice()
 ```
 
 Essa classe será utilizada futuramente em projetos que envolvem RPG, fique a vontade para utiliza-lá em seus projetos também.
+
 ![Lets Do It!!](https://media1.tenor.com/images/d8d7b003cc98b44d2a4ca87e27f0c304/tenor.gif "Lets Do It!!")
