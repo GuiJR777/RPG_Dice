@@ -40,7 +40,7 @@ class Cache():
         i = 0
         for key in self.cache.keys():
             i+=1
-            response[f'{i}'] = self.cache.get(key)
+            response[f'{i}'] = self.return_db(key)
         return response
         
 
