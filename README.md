@@ -41,12 +41,12 @@ dado = Dice()
 A classe pode ser usada atravéz de uma simples API **Flask**
 Por favor, use os EndPoints:
 
-- **/dice/text/{ _your text hear_ }** método GET para usar a partir do comando "roll {n} d {n}".
-- **/dice/text/** método POST para enviar um comando "roll {n} d {n}" em um objeto JSON na chave "text".
-- **/dice/{ _número de lados do dado desejado_ }/{ _quantidade de dados desejados_ }** para usar um dado específico.
-- **/dice/history** exibe o histórico de rolagens.
-- **/dice/history/clear** apaga o histórico de rolagens.
+- **https://rpgdiceapi.herokuapp.com/dice/text/{ _your text hear_ }** método GET para usar a partir do comando "roll {n} d {n}".
+- **https://rpgdiceapi.herokuapp.com/dice/text/** método POST para enviar um comando "roll {n} d {n}" em um objeto JSON na chave "text".
+- **https://rpgdiceapi.herokuapp.com/dice/{ _número de lados do dado desejado_ }/{ _quantidade de dados desejados_ }** para usar um dado específico.
+- **https://rpgdiceapi.herokuapp.com/dice/history** exibe o histórico de rolagens.
+- **https://rpgdiceapi.herokuapp.com/dice/history/clear** apaga o histórico de rolagens.
 
-Essa classe será utilizada futuramente em projetos que envolvem RPG, fique a vontade para utiliza-lá em seus projetos também.
+Essa classe será utilizada futuramente em projetos que envolvem RPG, fique a vontade para utiliza-lá em seus projetos também atravéz da [Api](https://rpgdiceapi.herokuapp.com/ "Api") ou clonando esse repositório.
 
 ![Lets Do It!!](https://media1.tenor.com/images/d8d7b003cc98b44d2a4ca87e27f0c304/tenor.gif "Lets Do It!!")
