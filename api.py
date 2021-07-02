@@ -1,7 +1,7 @@
+from core.rpgdice import Dice
 from flask import Flask, request
 from flask_restful import Api, Resource
 import json
-from rpgdice import Dice
 
 app= Flask(__name__)
 api= Api(app)
