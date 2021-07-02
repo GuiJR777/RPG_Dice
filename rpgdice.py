@@ -29,6 +29,7 @@ class  Dice():
             print(f'[Total  - {self.name}] -> {total_result} ')
 
         return {
+            'dice' : self.name,
             'plays' : results,
             'total' : total_result
         }
