@@ -11,7 +11,7 @@ class Redis_DB():
             redis_db.ping()
             return redis_db
         except Exception as e:
-            print(e)
+            pass
 
         redis_db = redis.StrictRedis(host="redis", port=REDIS_PORT, password=REDIS_PASS, decode_responses=True)
         redis_db.ping()
@@ -26,21 +26,18 @@ class Cache():
     def include(self, key:str, value:str) -> None:
         # Inclui no cache
         self.cache.set(key, value)
-        print(f'Chave {key} salva no cache com sucesso.')
 
     def include_with_hash(self, value:dict) -> None:
         # Inclui no cache
         value['created_at'] = u.agora()
         key = u.hash_this(str(value))
         self.cache.set(key, str(value))
-        print(f'Chave {key} salva no cache com sucesso.')
     
     def return_db(self,key:str) -> str:
         # Retorna do Cache
         if key in self.cache:
             str = self.cache.get(key)
         else:
-            print(f'A Chave {key} não foi encontrada no cache')
             str = None
         return str
 
@@ -57,12 +54,10 @@ class Cache():
         # Consulta Cache, se chave não for encontrada inclui no Redis
         self.cache.delete(key)
         response = f'Chave {key} deletada do cache com sucesso.'
-        print(response)
 
     def reset_cache(self):
         for key in self.cache.keys():
             self.cache.delete(key)
-        print('Cache resetado com sucesso')
 
 if __name__ == '__main__':
     pass

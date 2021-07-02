@@ -31,11 +31,9 @@ class  Dice():
         plays = []
         for i in range(amounts):
             result = randint(1, self.sides)
-            print(f'[Dice {i+1} - {self.name}] -> {result} ')
             plays.append(result)
             total_result+=result
-        if amounts > 1:
-            print(f'[Total  - {self.name}] -> {total_result} ')
+      
         response = {
             'dice' : self.name,
             'one_line_result' : self.get_result_in_line(plays, total_result),
@@ -63,14 +61,3 @@ class  Dice():
         else:
             pass
 
-
-if __name__ == '__main__':
-    # Área de demonstrações
-    dado = Dice()
-    print(dado.name, dado.roll())
-    print(dado.name, dado.roll(3))
-
-    texto = 'Aqui vai ter um comando roll1d20 para rodar um d20'
-    resultado = dado.roll_by_text(texto)
-    print(dado.name) # O nome do dado mudou pois o ultimo utilizado foi o D20
-    print(resultado['total']) #Acesso direto a soma dos resultados
