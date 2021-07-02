@@ -1,5 +1,5 @@
 from datetime import datetime
-from hashlib import sha256
+from hashlib import md5
 
 
 def agora():
@@ -9,6 +9,5 @@ def agora():
 
 def hash_this(string:str)->str:
     encode_string = string.encode('ascii')
-    hash = sha256(encode_string).hexdigest()
+    hash = md5(encode_string).hexdigest()
     return hash
-

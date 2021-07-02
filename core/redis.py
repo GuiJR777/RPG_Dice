@@ -21,9 +21,12 @@ class Cache():
         # Inclui no cache
         self.cache.set(key, value)
 
-    def include_with_hash(self, value:dict) -> None:
+    def include_with_hash(self, response:dict) -> None:
         # Inclui no cache
-        value['created_at'] = u.agora()
+        value = {
+            'result' : response['one_line_result'],
+            'created_at' : u.agora()           
+        }
         key = u.hash_this(str(value))
         self.cache.set(key, str(value))
     

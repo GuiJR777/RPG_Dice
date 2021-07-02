@@ -1,6 +1,5 @@
 from core.rpgdice import Dice
 from core.redis import Cache
-from core.constants import USE_CACHE
 from flask import Flask, request
 from flask_restful import Api, Resource
 import json
