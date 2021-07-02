@@ -28,7 +28,7 @@ class RollText(Resource):
         if USE_CACHE:
             cache.include_with_hash(payload)
 
-        return payload
+        return json.dumps(payload)
     
     def post(self):
         data = json.loads(request.data)
@@ -38,7 +38,7 @@ class RollText(Resource):
         if USE_CACHE:
             cache.include_with_hash(payload)
 
-        return payload
+        return json.dumps(payload)
 
 class RollDice(Resource):
     def get(self, dado, qtd):
@@ -47,21 +47,22 @@ class RollDice(Resource):
         if USE_CACHE:
             cache.include_with_hash(payload)
 
-        return payload
+        return json.dumps(payload)
 
 class History(Resource):
     def get(self):
-        
-        return cache.return_all()
+        payload = json.dumps(cache.return_all())
+
+        return json.dumps(payload)
 
 class HistoryClear(Resource):
     def get(self):
         cache.reset_cache()
-        message =  'Ok, history clean'
-
-        return {
-            'message' : message
+        message =  {
+            'message' : 'Ok, history clean'
         }
+
+        return json.dumps(message)
 
 resources = [
     [Teste, '/'],
