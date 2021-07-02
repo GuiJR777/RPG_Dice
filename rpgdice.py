@@ -20,18 +20,22 @@ class  Dice():
         """
         total_result = 0
         results = []
+        one_line = '[Dice]:'
         for i in range(amounts):
             result = randint(1, self.sides)
             print(f'[Dice {i+1} - {self.name}] -> {result} ')
             results.append(result)
             total_result+=result
+            one_line+= f' [{result}] '
         if amounts > 1:
             print(f'[Total  - {self.name}] -> {total_result} ')
+        one_line += f'-> {total_result}'
 
         return {
             'dice' : self.name,
             'plays' : results,
-            'total' : total_result
+            'total' : total_result,
+            'one_line_result' : one_line
         }
 
     def roll_by_text(self, text:str) -> dict:

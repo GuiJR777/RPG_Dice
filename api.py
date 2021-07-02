@@ -8,17 +8,11 @@ api= Api(app)
 
 class Teste(Resource):
     def get(sef):
-        message =  '''
-
-Ok, this is working!
-
-Please, use the EndPoints:
-- /dice/text/{your text hear} method GET to use from command "roll{n}d{n}".
-- /dice/text/{your text hear} method POST to send a command "roll{n}d{n}" in a JSON object in the key "text".
-- /dice/{number of sides of the desired dice}/{amount of dices desired} to use one especific dice.
-
-Enjoy!
-        '''
+        message =  'Ok, this is working! \
+Please, use the EndPoints:\
+[1]/dice/text/{your text hear} method GET to use from command "roll{n}d{n}".\
+[2]/dice/text/{your text hear} method POST to send a command "roll{n}d{n}" in a JSON object in the key "text".\
+[3]/dice/{number of sides of the desired dice}/{amount of dices desired} to use one especific dice. Enjoy!'
         return {'status':'OK', 'message':f'{message}'}
 
 class RollText(Resource):
