@@ -41,13 +41,13 @@ class Cache():
         for key in self.cache.keys():
             i+=1
             response[f'{i}'] = self.return_db(key)
+
         return response
         
 
     def delete(self, key:str) -> None:
         # Consulta Cache, se chave não for encontrada inclui no Redis
         self.cache.delete(key)
-        response = f'Chave {key} deletada do cache com sucesso.'
 
     def reset_cache(self):
         for key in self.cache.keys():

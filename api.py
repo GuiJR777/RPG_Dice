@@ -25,8 +25,7 @@ class RollText(Resource):
     def get(self, comand):
         dado = Dice()
         payload = dado.roll_by_text(comand)
-        if USE_CACHE:
-            cache.include_with_hash(payload)
+        cache.include_with_hash(payload)
 
         return json.dumps(payload)
     
@@ -35,8 +34,7 @@ class RollText(Resource):
         texto = data['text']
         dado = Dice()
         payload = dado.roll_by_text(texto)
-        if USE_CACHE:
-            cache.include_with_hash(payload)
+        cache.include_with_hash(payload)
 
         return json.dumps(payload)
 
@@ -44,8 +42,7 @@ class RollDice(Resource):
     def get(self, dado, qtd):
         dado = Dice(int(dado))
         payload = dado.roll(int(qtd))
-        if USE_CACHE:
-            cache.include_with_hash(payload)
+        cache.include_with_hash(payload)
 
         return json.dumps(payload)
 
