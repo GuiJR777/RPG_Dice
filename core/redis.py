@@ -1,22 +1,16 @@
 # Cria Banco de dados Redis e Cache
 import redis
+import os
 import core.utils as u
-from core.constants import REDIS_PASS, REDIS_PORT, REDIS_URL
 
 
 class Redis_DB():
     def get_instance() -> redis.Redis:
         try:
-            redis_db = redis.StrictRedis(host=REDIS_URL, port=REDIS_PORT, password=REDIS_PASS, decode_responses=True)
-            redis_db.ping()
+            redis_db = redis.from_url(os.environ.get("REDIS_URL"))
             return redis_db
         except Exception as e:
             pass
-
-        redis_db = redis.StrictRedis(host="redis", port=REDIS_PORT, password=REDIS_PASS, decode_responses=True)
-        redis_db.ping()
-
-        return redis_db
 
 # Classe que controla o cache
 class Cache():
