@@ -49,7 +49,7 @@ class History(Resource):
     def get(self):
         payload = cache.return_all()
 
-        return payload
+        return json.dumps(payload)
 
 class HistoryClear(Resource):
     def get(self):
