@@ -1,1 +1,1 @@
-api: gunicorn "api:start()"
+web: gunicorn "api:start()"
